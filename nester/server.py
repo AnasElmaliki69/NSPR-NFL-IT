@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 from flask import Flask, jsonify, abort, send_file, render_template_string
 import os
 import json

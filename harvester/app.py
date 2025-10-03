@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-# ~/seahawks/harvester/harvester.py
+
 import os
 import json
 import time
@@ -10,17 +9,15 @@ import logging
 import getpass
 import nmap
 
-# config (simple)
 REPORT_DIR = os.path.expanduser("~/seahawks/reports")
 LOG_FILE = os.path.expanduser("~/seahawks/logs/harvester.log")
 VERSION_FILE = os.path.expanduser("~/seahawks/VERSION")
 NESTER_USER = "seahawks"
-NESTER_HOST = "NESTER_IP_OR_HOSTNAME"   # << set this
-NESTER_REPO_DIR = "/home/seahawks/remote_reports"  # remote dir to receive reports
-SSH_KEY = os.path.expanduser("~/.ssh/seahawks_harvester_key")  # private key file
-PING_TARGET = "8.8.8.8"   # used to measure WAN latency; change if needed
+NESTER_HOST = "NESTER_IP_OR_HOSTNAME"   
+NESTER_REPO_DIR = "/home/seahawks/remote_reports" 
+SSH_KEY = os.path.expanduser("~/.ssh/seahawks_harvester_key")  
+PING_TARGET = "8.8.8.8"
 
-# logging
 logger = logging.getLogger("harvester")
 logger.setLevel(logging.INFO)
 fh = logging.FileHandler(LOG_FILE)
@@ -36,7 +33,6 @@ def read_version():
 def get_hostname_ip():
     hostname = socket.gethostname()
     try:
-        # best-effort get local IP
         ip = subprocess.check_output(["hostname", "-I"]).decode().strip().split()[0]
     except Exception:
         ip = "unknown"
@@ -45,7 +41,7 @@ def get_hostname_ip():
 def run_ping(target, count=3, timeout=2):
     try:
         out = subprocess.check_output(["ping", "-c", str(count), "-W", str(timeout), target], stderr=subprocess.DEVNULL).decode()
-        # parse average latency line "rtt min/avg/max/mdev = 0.123/0.456/..."
+
         for line in out.splitlines():
             if "rtt min/avg" in line or "round-trip" in line:
                 parts = line.split("=")[1].strip().split()[0].split("/")
