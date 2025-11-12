@@ -102,6 +102,42 @@
 3. La page `http://<ip-nester>:5000/` affiche le tableau actualisé ; `GET /api/reports` fournit le JSON brut.
 4. Le service **systemd** garantit que le dashboard est **toujours en ligne**.
 
+
+
+
+### 🖥️ Sur la machine **Nester (dashboard)** :
+
+
+* `app.py` → l’application **Flask** (le cœur de l’API et du tableau de bord).
+* `index.html` → le **modèle HTML** du tableau de bord (dans le dossier `/templates`).
+* `server.py` → le **lanceur** du serveur (optionnel) qui exécute l’application Flask avec **Waitress**, un serveur web plus stable que celui de développement.
+
+👉 Donc `server.py` sert uniquement **sur le Nester** — il fait tourner le tableau de bord.
+
 ---
 
-Si tu veux, je peux te donner les **commandes exactes** pour créer chaque fichier avec `tee`/`nano` et tout installer en 2–3 blocs copiables.
+### 💻 Sur la machine **Harvester (agent)** :
+
+
+* `send_report.py` → le script qui **collecte les données** locales (nom de la machine, IP, latence, etc.) et les **envoie** au Nester via l’API `/api/report`.
+
+C’est la partie **client**.
+
+---
+
+### 🧩 Résumé
+
+| Machine       | Script                 | Rôle                                       |
+| ------------- | ---------------------- | ------------------------------------------ |
+| **Nester**    | `app.py`               | Définit l’API (logique du serveur)         |
+| **Nester**    | `server.py`            | Lance le serveur Flask (dashboard)         |
+| **Nester**    | `templates/index.html` | Affiche les rapports (interface web)       |
+| **Harvester** | `send_report.py`       | Envoie les données au Nester régulièrement |
+
+---
+
+
+
+
+
+
