@@ -1,21 +1,41 @@
+<!-- templates/index.html -->
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Nester Dashboard</title>
-<style>body{font-family:system-ui;margin:24px} table{border-collapse:collapse}
-th,td{border:1px solid #ddd;padding:8px} th{background:#f3f3f3}</style>
-</head><body>
-<h1>Nester Dashboard</h1>
-<table>
-  <tr><th>Node</th><th>IP</th><th>Devices</th><th>Latency (ms)</th><th>Last Update</th></tr>
-  {% for node, r in reports.items() %}
-  <tr>
-    <td>{{ node }}</td>
-    <td>{{ r.get('ip','-') }}</td>
-    <td>{{ r.get('devices','-') }}</td>
-    <td>{{ r.get('latency_ms','-') }}</td>
-    <td>{{ r.get('updated_at','-') }}</td>
-  </tr>
-  {% endfor %}
-</table>
-<p><a href="/api/reports">/api/reports</a></p>
-</body></html>
-
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Nester Dashboard</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body{font-family:system-ui,Segoe UI,Roboto,Arial;margin:24px;color:#111}
+    table{border-collapse:collapse;width:100%;max-width:100%}
+    th,td{border:1px solid #e1e1e1;padding:8px;text-align:left}
+    th{background:#f6f6f6}
+    tr:nth-child(even){background:#fbfbfb}
+    caption{font-size:1.25rem;margin-bottom:12px}
+    .mono{font-family:monospace}
+  </style>
+</head>
+<body>
+  <h1>Nester Dashboard</h1>
+  <table>
+    <caption>Rapports reçus</caption>
+    <thead>
+      <tr><th>Node</th><th>IP</th><th>Devices</th><th>Latency (ms)</th><th>Dernière MAJ</th></tr>
+    </thead>
+    <tbody>
+      {% for node, r in reports.items() %}
+      <tr>
+        <td class="mono">{{ node }}</td>
+        <td>{{ r.get('ip','-') }}</td>
+        <td>{{ r.get('devices','-') }}</td>
+        <td>{{ r.get('latency_ms','-') }}</td>
+        <td>{{ r.get('updated_at','-') }}</td>
+      </tr>
+      {% else %}
+      <tr><td colspan="5">Aucun rapport disponible</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <p><a href="/api/reports">Voir JSON brut (/api/reports)</a></p>
+</body>
+</html>
