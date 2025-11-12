@@ -1,8 +1,9 @@
+# app.py
 from flask import Flask, jsonify, request, render_template
 from datetime import datetime
 import json, os, threading
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")
 BASE = os.path.dirname(__file__)
 DATA_PATH = os.path.join(BASE, "data.json")
 _lock = threading.Lock()
@@ -26,7 +27,9 @@ reports = load_reports()
 
 @app.route("/")
 def index():
-    return render_template("index.html", reports=reports)
+    with _lock:
+        current = dict(reports)
+    return render_template("index.html", reports=current)
 
 @app.route("/api/report", methods=["POST"])
 def receive_report():
