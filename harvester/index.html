@@ -1,1 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Nester Dashboard</title>
+<style>body{font-family:system-ui;margin:24px} table{border-collapse:collapse}
+th,td{border:1px solid #ddd;padding:8px} th{background:#f3f3f3}</style>
+</head><body>
+<h1>Nester Dashboard</h1>
+<table>
+  <tr><th>Node</th><th>IP</th><th>Devices</th><th>Latency (ms)</th><th>Last Update</th></tr>
+  {% for node, r in reports.items() %}
+  <tr>
+    <td>{{ node }}</td>
+    <td>{{ r.get('ip','-') }}</td>
+    <td>{{ r.get('devices','-') }}</td>
+    <td>{{ r.get('latency_ms','-') }}</td>
+    <td>{{ r.get('updated_at','-') }}</td>
+  </tr>
+  {% endfor %}
+</table>
+<p><a href="/api/reports">/api/reports</a></p>
+</body></html>
 
