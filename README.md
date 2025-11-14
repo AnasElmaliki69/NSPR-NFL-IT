@@ -7,7 +7,7 @@ Réalisation : **Anas EL MALIKI**, **Mariama BENKHALID**, **Xavier MEYER**
 
 ## 📘 Introduction
 
-Dans le cadre de la MSPR Développement et Sécurité Informatique du Bachelor Cyb3r XP, notre groupe a été chargé de concevoir **une solution de supervision réseau** pour la société **NFL IT**, dans le cadre du programme *Seahawks Monitoring*.
+Dans le cadre de la MSPR Développement et Sécurité Informatique du Bachelor Cyb3r XP, notre groupe a été chargé de concevoir **une solution de supervision réseau** pour la société **NFL IT**, dans le cadre du programme _Seahawks Monitoring_.
 
 L’objectif principal était de fournir une **solution simple, sécurisée et capable d’unifier la supervision réseau** entre plusieurs sites à distance, avec un système capable de :
 
@@ -37,10 +37,10 @@ Notre projet vise à répondre à ce besoin en construisant un système simple, 
 
 L’entreprise ne dispose pas d’un outil capable de :
 
-- Superviser le réseau en temps réel à distance  
-- Automatiser la collecte de données techniques  
-- Fournir un tableau de bord centralisé  
-- Garantir l’intégrité et la sécurité des rapports  
+- Superviser le réseau en temps réel à distance
+- Automatiser la collecte de données techniques
+- Fournir un tableau de bord centralisé
+- Garantir l’intégrité et la sécurité des rapports
 
 👉 **Problème central :**  
 **Comment créer une solution unifiée, automatisée et sécurisée capable de superviser plusieurs réseaux distants depuis un point central ?**
@@ -50,6 +50,7 @@ L’entreprise ne dispose pas d’un outil capable de :
 ## 🎯 Objectifs du projet
 
 ### **Objectif principal :**
+
 Créer un système composé de **Harvester** (collecteurs) et d’un **Nester** (serveur central) permettant la collecte, l’analyse et la visualisation des données réseau.
 
 ### **Objectifs secondaires :**
@@ -65,11 +66,11 @@ Créer un système composé de **Harvester** (collecteurs) et d’un **Nester** 
 
 ## 👥 Présentation des membres
 
-| Nom                | Rôle                           | Responsabilités principales |
-|--------------------|--------------------------------|-----------------------------|
-| **Anas EL MALIKI** | Développeur / Intégrateur      | Scripts Python, intégration, gestion du dépôt Git |
-| **Mariama BENKHALID** | Administratrice Système     | VM, réseau interne, configuration système |
-| **Xavier MEYER**   | Responsable Sécurité / DevOps  | Nginx, sécurité, HTTPS, durcissement |
+| Nom                   | Rôle                          | Responsabilités principales                       |
+| --------------------- | ----------------------------- | ------------------------------------------------- |
+| **Anas EL MALIKI**    | Développeur / Intégrateur     | Scripts Python, intégration, gestion du dépôt Git |
+| **Mariama BENKHALID** | Administratrice Système       | VM, réseau interne, configuration système         |
+| **Xavier MEYER**      | Responsable Sécurité / DevOps | Nginx, sécurité, HTTPS, durcissement              |
 
 ---
 
@@ -77,8 +78,7 @@ Créer un système composé de **Harvester** (collecteurs) et d’un **Nester** 
 
 ### 🗂️ Schéma global du projet
 
-![Planning du projet](Docs\img\image.png)
-
+![Planning du projet](./docs/img/image.png)
 
 Le système repose sur :
 
@@ -103,7 +103,7 @@ Le système repose sur :
 
 ### 📅 Diagramme de Gantt / Chronologie
 
-![Architecture du système](Docs\img\Screenshot 2025-11-13 213656.png)
+![Architecture du système](./docs/img/Screenshot 2025-11-13 213656.png)
 
 ### 📌 Phases principales
 
@@ -120,16 +120,16 @@ Le système repose sur :
 
 ## 🛠️ Technologies utilisées
 
-| Technologie | Rôle | Justification |
-|------------|------|---------------|
-| **Python 3** | Scan & automatisation | Flexible, puissant, maintenable |
-| **python-nmap** | Scan réseau | Intégration simple avec Python |
-| **Nmap** | Collecte réseau | Standard industriel |
-| **Nginx** | Serveur web | Léger, rapide, sécurisé |
-| **DuckDNS** | DNS dynamique | Accès distant gratuit |
-| **bcrypt** | Hash des mots de passe | Sécurisation |
-| **VirtualBox** | Environnement virtuel | Simule un réseau complet |
-| **Git / GitHub** | Travail collaboratif | Versioning & transparence |
+| Technologie      | Rôle                   | Justification                   |
+| ---------------- | ---------------------- | ------------------------------- |
+| **Python 3**     | Scan & automatisation  | Flexible, puissant, maintenable |
+| **python-nmap**  | Scan réseau            | Intégration simple avec Python  |
+| **Nmap**         | Collecte réseau        | Standard industriel             |
+| **Nginx**        | Serveur web            | Léger, rapide, sécurisé         |
+| **DuckDNS**      | DNS dynamique          | Accès distant gratuit           |
+| **bcrypt**       | Hash des mots de passe | Sécurisation                    |
+| **VirtualBox**   | Environnement virtuel  | Simule un réseau complet        |
+| **Git / GitHub** | Travail collaboratif   | Versioning & transparence       |
 
 ---
 
@@ -157,7 +157,7 @@ Les tests ont permis de valider :
 - Le fonctionnement du serveur web Nginx
 - La solidité du système d’authentification
 
-⚠️ *Les captures techniques (ping, résultats scans, terminal…) sont uniquement disponibles dans le rapport complet.*
+⚠️ _Les captures techniques (ping, résultats scans, terminal…) sont uniquement disponibles dans le rapport complet._
 
 ---
 
@@ -165,21 +165,17 @@ Les tests ont permis de valider :
 
 Le rapport complet (avec toutes les captures techniques, résultats détaillés, configurations et preuves) est disponible ici :
 
-👉 **[Télécharger le Rapport MSPR (PDF)](./docs/Rapport_MSPR.pdf)**
-
-*(Change the filename to match your actual PDF)*
-
 ---
 
 ## 📚 Conclusion
 
 Ce projet nous a permis de :
 
-- Déployer une architecture réseau réaliste  
-- Mettre en place une solution complète de supervision  
-- Renforcer nos compétences en Python, sécurité, et administration système  
-- Collaborer efficacement en équipe  
-- Produire une documentation professionnelle  
+- Déployer une architecture réseau réaliste
+- Mettre en place une solution complète de supervision
+- Renforcer nos compétences en Python, sécurité, et administration système
+- Collaborer efficacement en équipe
+- Produire une documentation professionnelle
 
 La solution Seahawk Monitoring fournit désormais une **base robuste, sécurisée et évolutive** pour la supervision réseau multi-sites.
 
@@ -190,7 +186,3 @@ La solution Seahawk Monitoring fournit désormais une **base robuste, sécurisé
 - **Anas EL MALIKI**
 - **Mariama BENKHALID**
 - **Xavier MEYER**
-
-
-
-
