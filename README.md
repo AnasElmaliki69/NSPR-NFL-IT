@@ -78,7 +78,7 @@ Créer un système composé de **Harvester** (collecteurs) et d’un **Nester** 
 
 ### 🗂️ Schéma global du projet
 
-![Planning du projet](./docs/img/image.png)
+![Schéma global du projet](./docs/img/image.png)
 
 Le système repose sur :
 
@@ -103,7 +103,7 @@ Le système repose sur :
 
 ### 📅 Diagramme de Gantt / Chronologie
 
-![Architecture du système](./docs/img/Screenshot 2025-11-13 213656.png)
+![Planning du projet](./docs/img/Screenshot 2025-11-13 213656.png)
 
 ### 📌 Phases principales
 
